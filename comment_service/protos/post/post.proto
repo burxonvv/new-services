@@ -1,0 +1,56 @@
+syntax="proto3";
+
+package post;
+
+service PostService {
+    // methods...
+    rpc CreatePost(PostRequest) returns (PostResponse) {}
+    rpc GetPostById(Request) returns (PostResponse) {}
+    rpc GetPostByUserId(Request) returns (PostsResponse) {}
+    rpc SearchPosts(Request) returns (PostsResponse) {}
+    rpc LikePost(LikeRequest) returns (PostResponse) {}
+    rpc UpdatePost(UpdatePostRequest) returns (PostResponse) {}
+    rpc DeletePost(Request) returns (PostResponse) {}
+
+    // for Clients...
+    rpc GetPostForUser(Request) returns (PostsResponse) {}
+    rpc GetPostForComment(Request) returns (PostResponse) {}
+}
+
+message Request {
+    string str = 1;
+}
+
+message LikeRequest {
+    string post_id = 1;
+    bool is_liked = 2;
+}
+
+message PostRequest {
+    string id = 1;
+    string title = 2;
+    string description =3;
+    string user_id = 4;
+}
+
+message UpdatePostRequest {
+    string title = 1;
+    string description = 2;
+    string id = 3;
+}
+
+message PostsResponse {
+    repeated PostResponse posts = 1;
+}
+
+message PostResponse {
+    string id = 1;
+    string title = 2;
+    string description = 3;
+    int64 likes = 4;
+    int64 comments = 5;
+    string user_id = 6;
+    string user_name = 7;
+    string created_at = 8;
+    string updated_at = 9;
+}

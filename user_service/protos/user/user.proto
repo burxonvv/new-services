@@ -1,0 +1,98 @@
+syntax="proto3";
+
+package user;
+
+service UserService{
+    // methods...
+    rpc CreateUser(UserResponse) returns (UserResponse){}
+    rpc GetUserById(Request) returns (UserResponse){}
+    rpc GetUserByEmail(Request) returns (UserResponse) {}
+    rpc GetAllUsers(GetUsersRequest) returns (UsersResponse) {}
+    rpc SearchUsers(Request) returns (UsersResponse){}
+    rpc UpdateUser(UpdateUserRequest) returns (UserResponse){}
+    rpc DeleteUser(Request) returns (UserResponse){}
+
+    // check...
+    rpc CheckField(CheckFieldRequest) returns (CheckFieldResponse) {}
+
+    // Register...
+    rpc UpdateUserTokens(UpdateUserTokensRequest) returns (UserResponse) {}
+    rpc Login(LoginRequest) returns (LoginResponse) {}
+
+    // for Client...
+    rpc GetUserForClient(Request) returns (UserResponse) {}
+
+    // rbac...
+    rpc ChangeRoleUser(ChangeRoleRequest) returns (UserResponse) {}
+    rpc GetSameRoleUsers(Request) returns (UsersResponse) {}
+}
+
+message ChangeRoleRequest {
+    string id = 1;
+    string role = 2;
+}
+
+message CheckFieldRequest {
+    string field = 1;
+    string value = 2;
+}
+
+message Request{
+    string str = 1;
+}
+
+message GetUsersRequest{
+    int64 page = 1;
+    int64 limit = 2;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message UpdateUserTokensRequest {
+    string id = 1;
+    string access_token = 2;
+    string refresh_token = 3;
+}
+
+message UpdateUserRequest {
+    string first_name = 1;
+    string last_name = 2;
+    string email = 3;
+    string id = 4;
+}
+
+message CheckFieldResponse {
+    bool exists = 1;
+}
+
+message LoginResponse {
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string user_type = 4;
+    string email = 5;
+    string password = 6;
+    string access_token = 7;
+    string refresh_token = 8;
+}
+
+message UserResponse{
+    string id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string user_type = 4;
+    string email = 5;
+    string password = 6;
+    string access_token = 7;
+    string refresh_token = 8;
+    int64 posts = 9;
+    string created_at = 10;
+    string updated_at = 11;
+}
+
+message UsersResponse {
+    repeated UserResponse users = 1;
+}
