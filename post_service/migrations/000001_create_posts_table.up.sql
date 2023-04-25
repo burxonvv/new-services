@@ -1,10 +1,10 @@
-CREATE TABLE IF NOT EXISTS "comments" (
-    "id" SERIAL PRIMARY KEY,
-    "title" VARCHAR(60),
-    "description" VARCHAR(60),
-    "likes" INTEGER DEFAULT 0,
-    "user_id" INTEGER,
-    "created_at" TIME DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIME DEFAULT CURRENT_TIMESTAMP,
-    "deleted_at" TIME
-)
+create table "posts"(
+    "id" uuid, 
+    "user_id" uuid, 
+    "title" text, 
+    "description" text, 
+    "likes" integer default 0, 
+    "created_at" timestamp default current_timestamp, 
+    "updated_at" timestamp default current_timestamp, 
+    "deleted_at" timestamp
+);
