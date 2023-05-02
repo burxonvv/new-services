@@ -8,7 +8,7 @@ import (
 
 type Config struct {
 	Environment string // develop, staging, production
-	
+
 	// context timeout in seconds
 	CtxTimeout int
 
@@ -21,12 +21,12 @@ type Config struct {
 	PostgresUser     string
 	PostgresPassword string
 	PostgresDatabase string
-	
+
 	// services...
-	UserServiceHost string
-	UserServicePort string
-	PostServiceHost  string
-	PostServicePort  string
+	UserServiceHost    string
+	UserServicePort    string
+	PostServiceHost    string
+	PostServicePort    string
 	CommentServiceHost string
 	CommentServicePort string
 
@@ -43,9 +43,9 @@ type Config struct {
 
 func Load() Config {
 	c := Config{}
-	
+
 	c.PostgresUser = cast.ToString(getOrReturnDefault("POSTGRES_User", "postgres"))
-	c.PostgresPassword = cast.ToString(getOrReturnDefault("POSTGRES_PASSWORD", "bnnfav"))
+	c.PostgresPassword = cast.ToString(getOrReturnDefault("POSTGRES_PASSWORD", "focus"))
 	c.PostgresHost = cast.ToString(getOrReturnDefault("POSTGRES_HOST", "localhost"))
 	c.PostgresPort = cast.ToString(getOrReturnDefault("POSTGRES_PORT", "5432"))
 	c.PostgresDatabase = cast.ToString(getOrReturnDefault("POSTGRES_DATABASE", "new_york"))
@@ -64,7 +64,7 @@ func Load() Config {
 
 	c.CommentServiceHost = cast.ToString(getOrReturnDefault("COMMENT_SERVICE_HOST", "localhost"))
 	c.CommentServicePort = cast.ToString(getOrReturnDefault("COMMENT_SERVICE_PORT", "8020"))
-	
+
 	// redis...
 	c.RedisHost = cast.ToString(getOrReturnDefault("REDIS_HOST", "localhost"))
 	c.RedisPort = cast.ToString(getOrReturnDefault("REDIS_PORT", "6379"))

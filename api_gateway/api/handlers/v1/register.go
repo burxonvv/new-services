@@ -88,7 +88,7 @@ func (h *handlerV1) Register(c *gin.Context) {
 	err = email.SendEmail([]string{body.Email}, []byte(msg))
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{
-			"eroor": err.Error(),
+			"eroor sending email": err.Error(),
 		})
 		return
 	}

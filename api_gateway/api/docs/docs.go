@@ -1463,6 +1463,8 @@ var SwaggerInfo = &swag.Spec{
 	Description:      "user post and comment services in REST API",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
+	LeftDelim:        "{{",
+	RightDelim:       "}}",
 }
 
 func init() {

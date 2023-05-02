@@ -3,8 +3,8 @@ package email
 import "net/smtp"
 
 func SendEmail(to []string, message []byte) error {
-	from := "burxonnuriddinovdv@gmail.com"
-	password := "ipjqciqjzbskwhtp"
+	from := "burxon4ever@gmail.com"
+	password := "vlieaifcndzetwmt"
 
 	// smtp server configuration
 	smtpHost := "smtp.gmail.com"
