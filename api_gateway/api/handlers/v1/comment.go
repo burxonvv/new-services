@@ -2,14 +2,13 @@ package v1
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"time"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	pc "github.com/burxondv/new-services/api-gateway/genproto/comment"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/google/uuid"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	pc "github.com/new-york-services/api_gateway/genproto/comment"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
@@ -84,13 +83,13 @@ func (h *handlerV1) WriteComment(c *gin.Context) {
 }
 
 // Super-Admin | Admin | User
-// @Summary Get Comments
+// @Summary Get Comments by Post ID
 // @Tags Comment
-// @Description Getting comments from Post Id
+// @Description Getting comments by Post Id
 // @Security ApiKeyAuth
 // @Accept json
 // @Produce json
-// @Param id path string true "Id"
+// @Param id path string true "Post ID"
 // @Success 200 string models.Comments
 // @Failure 400 string Error models.Error
 // @Failure 500 string Error models.Error
@@ -111,8 +110,6 @@ func (h *handlerV1) GetComments(c *gin.Context) {
 		return
 	}
 
-	fmt.Println(response.Comments)
-
 	for _, val := range response.Comments {
 		com := models.Comment{}
 		com.Id = val.Id
@@ -121,6 +118,7 @@ func (h *handlerV1) GetComments(c *gin.Context) {
 		com.PostUserName = val.PostUserName
 		com.UserId = val.UserId
 		com.UserName = val.UserName
+		com.UserType = val.UserType
 		com.Text = val.Text
 		com.CreatedAt = val.CreatedAt
 
@@ -133,11 +131,11 @@ func (h *handlerV1) GetComments(c *gin.Context) {
 // Super-Admin | Admin | User
 // @Summary Delete Comment
 // @Tags Comment
-// @Descrtiption Delete Comment by Id
+// @Description Delete Comment by Id
 // @Security ApiKeyAuth
 // @Accept json
 // @Produce json
-// @Param id path string true "ID"
+// @Param id path string true "Comment Id"
 // @Success 200 {object} models.DeletedComment
 // @Failure 400 string Error models.Error
 // @Failure 500 string Error models.Error
@@ -163,6 +161,7 @@ func (h *handlerV1) DeleteComment(c *gin.Context) {
 		PostTitle:    response.PostTitle,
 		UserId:       response.UserId,
 		UserName:     response.UserName,
+		UserType:     response.UserType,
 		PostUserName: response.PostUserName,
 		Text:         response.Text,
 		CreatedAt:    response.CreatedAt,

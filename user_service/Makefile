@@ -14,3 +14,7 @@ migrate_force:
 	migrate -path migrations -database postgres://postgres:bnnfav@localhost:5432/suserdb -verbose force 0
 
 .PHONY: start migrateup migratedown
+
+tidy:
+	go mod tidy
+	go mod vendor

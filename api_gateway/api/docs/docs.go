@@ -74,7 +74,7 @@ const docTemplate = `{
                         "ApiKeyAuth": []
                     }
                 ],
-                "description": "Getting comments from Post Id",
+                "description": "Getting comments by Post Id",
                 "consumes": [
                     "application/json"
                 ],
@@ -84,11 +84,11 @@ const docTemplate = `{
                 "tags": [
                     "Comment"
                 ],
-                "summary": "Get Comments",
+                "summary": "Get Comments by Post ID",
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "Id",
+                        "description": "Post ID",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -121,6 +121,7 @@ const docTemplate = `{
                         "ApiKeyAuth": []
                     }
                 ],
+                "description": "Delete Comment by Id",
                 "consumes": [
                     "application/json"
                 ],
@@ -134,7 +135,7 @@ const docTemplate = `{
                 "parameters": [
                     {
                         "type": "string",
-                        "description": "ID",
+                        "description": "Comment Id",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -303,7 +304,7 @@ const docTemplate = `{
                 "tags": [
                     "Post"
                 ],
-                "summary": "GetUser by Id",
+                "summary": "Get posts by user Id",
                 "parameters": [
                     {
                         "type": "string",
@@ -1376,9 +1377,6 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "first_name": {
-                    "type": "string"
-                },
-                "id": {
                     "type": "string"
                 },
                 "last_name": {

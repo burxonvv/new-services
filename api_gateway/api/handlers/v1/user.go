@@ -2,17 +2,16 @@ package v1
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"time"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	pu "github.com/burxondv/new-services/api-gateway/genproto/user"
+	"github.com/burxondv/new-services/api-gateway/pkg/etc"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
+	"github.com/burxondv/new-services/api-gateway/pkg/utils"
 	"github.com/google/uuid"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	pu "github.com/new-york-services/api_gateway/genproto/user"
-	"github.com/new-york-services/api_gateway/pkg/etc"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
-	"github.com/new-york-services/api_gateway/pkg/utils"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
@@ -231,9 +230,6 @@ func (h *handlerV1) GetAllUsers(c *gin.Context) {
 		return
 	}
 
-	fmt.Println(params.Page)
-	fmt.Println(params.Limit)
-
 	for _, val := range response.Users {
 		newUser := models.User{}
 		newUser.Id = val.Id
@@ -279,11 +275,11 @@ func (h *handlerV1) UpdateUser(c *gin.Context) {
 		return
 	}
 
-	// claims := GetClaims(h, c)
-	// reqId := claims["sub"].(string)
+	claims := GetClaims(h, c)
+	reqId := claims["sub"].(string)
 
 	res, err := h.serviceManager.UserService().UpdateUser(context.Background(), &pu.UpdateUserRequest{
-		Id:        body.Id,
+		Id:        reqId,
 		FirstName: body.FirstName,
 		LastName:  body.LastName,
 		Email:     body.Email,

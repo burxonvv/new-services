@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	pu "github.com/burxondv/new-services/api-gateway/genproto/user"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/gin-gonic/gin"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	pu "github.com/new-york-services/api_gateway/genproto/user"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
 )
 
 // Super-Admin
@@ -179,7 +179,6 @@ func (h *handlerV1) DeleteRoleForUser(c *gin.Context) {
 // @Router /v1/rbac/get-policy [get]
 func (h *handlerV1) GetPolicy(c *gin.Context) {
 	data := h.enforcer.GetPolicy()
-	fmt.Println(data)
 	c.JSON(http.StatusOK, data)
 }
 

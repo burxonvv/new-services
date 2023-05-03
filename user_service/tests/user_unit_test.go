@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/new-york-services/user_service/storage/repo"
+	"github.com/burxondv/new-services/user-service/storage/repo"
 )
 
 func TestUnit_User_Create(t *testing.T) {

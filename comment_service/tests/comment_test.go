@@ -3,10 +3,10 @@ package postgres
 import (
 	"testing"
 
-	"github.com/new-york-services/comment_service/config"
-	"github.com/new-york-services/comment_service/pkg/db"
-	"github.com/new-york-services/comment_service/storage/postgres"
-	"github.com/new-york-services/comment_service/storage/repo"
+	"github.com/burxondv/new-services/comment-service/config"
+	"github.com/burxondv/new-services/comment-service/pkg/db"
+	"github.com/burxondv/new-services/comment-service/storage/postgres"
+	"github.com/burxondv/new-services/comment-service/storage/repo"
 
 	"github.com/stretchr/testify/suite"
 )

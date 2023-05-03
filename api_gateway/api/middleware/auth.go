@@ -4,12 +4,12 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	"github.com/burxondv/new-services/api-gateway/config"
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	"github.com/new-york-services/api_gateway/config"
 )
 
 type JWTRoleAuthorizer struct {

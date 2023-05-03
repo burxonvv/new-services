@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 
+	"github.com/burxondv/new-services/api-gateway/api"
+	"github.com/burxondv/new-services/api-gateway/config"
+	"github.com/burxondv/new-services/api-gateway/pkg/logger"
+	"github.com/burxondv/new-services/api-gateway/services"
+	"github.com/burxondv/new-services/api-gateway/storage/redis"
 	"github.com/casbin/casbin/v2"
 	defaultrolemanager "github.com/casbin/casbin/v2/rbac/default-role-manager"
 	"github.com/casbin/casbin/v2/util"
-	"github.com/new-york-services/api_gateway/api"
-	"github.com/new-york-services/api_gateway/config"
-	"github.com/new-york-services/api_gateway/pkg/logger"
-	"github.com/new-york-services/api_gateway/services"
-	"github.com/new-york-services/api_gateway/storage/redis"
 
 	r "github.com/gomodule/redigo/redis"
 

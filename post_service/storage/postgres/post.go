@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/new-york-services/post_service/storage/repo"
+	"github.com/burxondv/new-services/post-service/storage/repo"
 )
 
 func (r *PostRepo) CreatePost(post repo.Post) (repo.Post, error) {

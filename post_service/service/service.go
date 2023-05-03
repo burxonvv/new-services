@@ -6,13 +6,13 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	c "github.com/new-york-services/post_service/genproto/comment"
-	p "github.com/new-york-services/post_service/genproto/post"
-	u "github.com/new-york-services/post_service/genproto/user"
-	"github.com/new-york-services/post_service/pkg/logger"
-	grpcclient "github.com/new-york-services/post_service/service/grpc_client"
-	"github.com/new-york-services/post_service/storage"
-	"github.com/new-york-services/post_service/storage/repo"
+	c "github.com/burxondv/new-services/post-service/genproto/comment"
+	p "github.com/burxondv/new-services/post-service/genproto/post"
+	u "github.com/burxondv/new-services/post-service/genproto/user"
+	"github.com/burxondv/new-services/post-service/pkg/logger"
+	grpcclient "github.com/burxondv/new-services/post-service/service/grpc_client"
+	"github.com/burxondv/new-services/post-service/storage"
+	"github.com/burxondv/new-services/post-service/storage/repo"
 )
 
 type PostService struct {

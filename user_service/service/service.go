@@ -9,12 +9,12 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
-	p "github.com/new-york-services/user_service/genproto/post"
-	u "github.com/new-york-services/user_service/genproto/user"
-	"github.com/new-york-services/user_service/pkg/logger"
-	grpcclient "github.com/new-york-services/user_service/service/grpc_client"
-	"github.com/new-york-services/user_service/storage"
-	"github.com/new-york-services/user_service/storage/repo"
+	p "github.com/burxondv/new-services/user-service/genproto/post"
+	u "github.com/burxondv/new-services/user-service/genproto/user"
+	"github.com/burxondv/new-services/user-service/pkg/logger"
+	grpcclient "github.com/burxondv/new-services/user-service/service/grpc_client"
+	"github.com/burxondv/new-services/user-service/storage"
+	"github.com/burxondv/new-services/user-service/storage/repo"
 
 	"golang.org/x/crypto/bcrypt"
 )

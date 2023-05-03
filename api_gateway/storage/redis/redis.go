@@ -3,7 +3,7 @@ package redis
 import (
 	"fmt"
 
-	"github.com/new-york-services/api_gateway/storage/repo"
+	"github.com/burxondv/new-services/api-gateway/storage/repo"
 
 	"github.com/gomodule/redigo/redis"
 )

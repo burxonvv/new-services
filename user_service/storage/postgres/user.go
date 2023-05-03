@@ -6,8 +6,8 @@ import (
 	"log"
 	"time"
 
-	u "github.com/new-york-services/user_service/genproto/user"
-	"github.com/new-york-services/user_service/storage/repo"
+	u "github.com/burxondv/new-services/user-service/genproto/user"
+	"github.com/burxondv/new-services/user-service/storage/repo"
 )
 
 func (r *UserRepo) CreateUser(user repo.User) (repo.User, error) {

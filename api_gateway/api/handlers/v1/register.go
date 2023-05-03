@@ -7,15 +7,15 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	pu "github.com/burxondv/new-services/api-gateway/genproto/user"
+	"github.com/burxondv/new-services/api-gateway/pkg/email"
+	"github.com/burxondv/new-services/api-gateway/pkg/etc"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/gin-gonic/gin"
 	r "github.com/gomodule/redigo/redis"
 	"github.com/google/uuid"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	pu "github.com/new-york-services/api_gateway/genproto/user"
-	"github.com/new-york-services/api_gateway/pkg/email"
-	"github.com/new-york-services/api_gateway/pkg/etc"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
 )
 
 // unauthorized

@@ -1,4 +1,4 @@
-module github.com/new-york-services/api_gateway
+module github.com/burxondv/new-services/api-gateway
 
 go 1.20
 

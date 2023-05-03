@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/new-york-services/post_service/storage/repo"
+	"github.com/burxondv/new-services/post-service/storage/repo"
 )
 
 func TestPost_Create(t *testing.T) {

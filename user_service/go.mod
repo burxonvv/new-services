@@ -1,4 +1,4 @@
-module github.com/new-york-services/user_service
+module github.com/burxondv/new-services/user-service
 
 go 1.20
 

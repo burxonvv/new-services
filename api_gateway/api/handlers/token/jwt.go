@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/golang-jwt/jwt"
-	"github.com/new-york-services/api_gateway/pkg/logger"
 )
 
 type JWTHandler struct {

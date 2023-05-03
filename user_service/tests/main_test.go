@@ -5,9 +5,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/new-york-services/user_service/config"
-	"github.com/new-york-services/user_service/pkg/db"
-	"github.com/new-york-services/user_service/storage/postgres"
+	"github.com/burxondv/new-services/user-service/config"
+	"github.com/burxondv/new-services/user-service/pkg/db"
+	"github.com/burxondv/new-services/user-service/storage/postgres"
 )
 
 var pgRepo *postgres.UserRepo

@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/new-york-services/comment_service/storage/repo"
+	"github.com/burxondv/new-services/comment-service/storage/repo"
 )
 
 func (r *CommentRepo) WriteComment(comment repo.Comment) (repo.Comment, error) {

@@ -6,15 +6,15 @@ import (
 
 	//"strings"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	"github.com/burxondv/new-services/api-gateway/config"
+	"github.com/burxondv/new-services/api-gateway/pkg/logger"
+	"github.com/burxondv/new-services/api-gateway/services"
+	"github.com/burxondv/new-services/api-gateway/storage/repo"
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	"github.com/new-york-services/api_gateway/config"
-	"github.com/new-york-services/api_gateway/pkg/logger"
-	"github.com/new-york-services/api_gateway/services"
-	"github.com/new-york-services/api_gateway/storage/repo"
 )
 
 type handlerV1 struct {

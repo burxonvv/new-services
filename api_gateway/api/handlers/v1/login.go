@@ -4,11 +4,11 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	pu "github.com/burxondv/new-services/api-gateway/genproto/user"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/gin-gonic/gin"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	pu "github.com/new-york-services/api_gateway/genproto/user"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

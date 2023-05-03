@@ -1,7 +1,7 @@
 package repo
 
 import (
-	u "github.com/new-york-services/user_service/genproto/user"
+	u "github.com/burxondv/new-services/user-service/genproto/user"
 )
 
 type UserStoreI interface {

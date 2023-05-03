@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/new-york-services/user_service/config"
-	u "github.com/new-york-services/user_service/genproto/user"
-	"github.com/new-york-services/user_service/pkg/db"
-	"github.com/new-york-services/user_service/pkg/logger"
-	"github.com/new-york-services/user_service/service"
-	grpcclient "github.com/new-york-services/user_service/service/grpc_client"
+	"github.com/burxondv/new-services/user-service/config"
+	u "github.com/burxondv/new-services/user-service/genproto/user"
+	"github.com/burxondv/new-services/user-service/pkg/db"
+	"github.com/burxondv/new-services/user-service/pkg/logger"
+	"github.com/burxondv/new-services/user-service/service"
+	grpcclient "github.com/burxondv/new-services/user-service/service/grpc_client"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"

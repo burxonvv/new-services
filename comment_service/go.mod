@@ -1,4 +1,4 @@
-module github.com/new-york-services/comment_service
+module github.com/burxondv/new-services/comment-service
 
 go 1.20
 

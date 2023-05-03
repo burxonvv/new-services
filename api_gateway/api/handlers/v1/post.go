@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/burxondv/new-services/api-gateway/api/handlers/models"
+	pp "github.com/burxondv/new-services/api-gateway/genproto/post"
+	l "github.com/burxondv/new-services/api-gateway/pkg/logger"
 	"github.com/google/uuid"
-	"github.com/new-york-services/api_gateway/api/handlers/models"
-	pp "github.com/new-york-services/api_gateway/genproto/post"
-	l "github.com/new-york-services/api_gateway/pkg/logger"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/encoding/protojson"
@@ -164,7 +164,7 @@ func (h *handlerV1) GetProfilePosts(c *gin.Context) {
 }
 
 // Super-Admin | Admin | User
-// @Summary GetUser by Id
+// @Summary Get posts by user Id
 // @Tags Post
 // @Descrtiption Get post by User Id
 // @Security ApiKeyAuth
@@ -201,6 +201,8 @@ func (h *handlerV1) GetPostsUser(c *gin.Context) {
 		pt.Comments = val.Comments
 		pt.CreatedAt = val.CreatedAt
 		pt.UpdatedAt = val.UpdatedAt
+
+		posts.Posts = append(posts.Posts, pt)
 	}
 
 	c.JSON(http.StatusOK, posts)

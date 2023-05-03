@@ -1,15 +1,15 @@
 package api
 
 import (
+	_ "github.com/burxondv/new-services/api-gateway/api/docs" // swag
+	"github.com/burxondv/new-services/api-gateway/api/handlers/token"
+	v1 "github.com/burxondv/new-services/api-gateway/api/handlers/v1"
+	"github.com/burxondv/new-services/api-gateway/api/middleware"
+	"github.com/burxondv/new-services/api-gateway/config"
+	"github.com/burxondv/new-services/api-gateway/pkg/logger"
+	"github.com/burxondv/new-services/api-gateway/services"
+	"github.com/burxondv/new-services/api-gateway/storage/repo"
 	"github.com/casbin/casbin/v2"
-	_ "github.com/new-york-services/api_gateway/api/docs" // swag
-	"github.com/new-york-services/api_gateway/api/handlers/token"
-	v1 "github.com/new-york-services/api_gateway/api/handlers/v1"
-	"github.com/new-york-services/api_gateway/api/middleware"
-	"github.com/new-york-services/api_gateway/config"
-	"github.com/new-york-services/api_gateway/pkg/logger"
-	"github.com/new-york-services/api_gateway/services"
-	"github.com/new-york-services/api_gateway/storage/repo"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
@@ -70,7 +70,7 @@ func New(option Option) *gin.Engine {
 	api.POST("rbac/delete-role-user", handlerV1.DeleteRoleForUser)
 	api.GET("/rbac/get-policy", handlerV1.GetPolicy)
 	api.PUT("/rbac/change-role", handlerV1.ChangeRoleUser)
-	api.GET("/rbac/same-role/{role}", handlerV1.GetSameRoleUsers)
+	api.GET("/rbac/same-role/:role", handlerV1.GetSameRoleUsers)
 
 	// users ...
 	api.POST("/users/create", handlerV1.CreateUser)

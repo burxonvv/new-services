@@ -3,11 +3,11 @@ package postgres
 import (
 	"fmt"
 
-	"github.com/new-york-services/user_service/config"
-	u "github.com/new-york-services/user_service/genproto/user"
-	"github.com/new-york-services/user_service/pkg/db"
-	"github.com/new-york-services/user_service/storage/postgres"
-	"github.com/new-york-services/user_service/storage/repo"
+	"github.com/burxondv/new-services/user-service/config"
+	u "github.com/burxondv/new-services/user-service/genproto/user"
+	"github.com/burxondv/new-services/user-service/pkg/db"
+	"github.com/burxondv/new-services/user-service/storage/postgres"
+	"github.com/burxondv/new-services/user-service/storage/repo"
 
 	"testing"
 

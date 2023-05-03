@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/burxondv/new-services/user-service/storage/repo"
 	"github.com/google/uuid"
-	"github.com/new-york-services/user_service/storage/repo"
 	"github.com/stretchr/testify/assert"
 )
 

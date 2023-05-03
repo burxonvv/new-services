@@ -3,10 +3,10 @@ package services
 import (
 	"fmt"
 
-	"github.com/new-york-services/api_gateway/config"
-	pc "github.com/new-york-services/api_gateway/genproto/comment"
-	pp "github.com/new-york-services/api_gateway/genproto/post"
-	pu "github.com/new-york-services/api_gateway/genproto/user"
+	"github.com/burxondv/new-services/api-gateway/config"
+	pc "github.com/burxondv/new-services/api-gateway/genproto/comment"
+	pp "github.com/burxondv/new-services/api-gateway/genproto/post"
+	pu "github.com/burxondv/new-services/api-gateway/genproto/user"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

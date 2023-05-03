@@ -1,4 +1,4 @@
-module github.com/new-york-services/post_service
+module github.com/burxondv/new-services/post-service
 
 go 1.20
 
