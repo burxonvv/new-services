@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS "users" (
-    "id" SERIAL PRIMARY KEY,
+    "id" uuid,
     "first_name" TEXT,
     "last_name" TEXT,
     "email" TEXT,

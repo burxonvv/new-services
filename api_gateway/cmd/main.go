@@ -14,7 +14,7 @@ import (
 
 	r "github.com/gomodule/redigo/redis"
 
-	gormadapter "github.com/casbin/gorm-adapter/v2"
+	// gormadapter "github.com/casbin/gorm-adapter/v2"
 )
 
 func main() {
@@ -26,20 +26,20 @@ func main() {
 		logger.String("port", cfg.PostgresPort),
 		logger.String("database", cfg.PostgresDatabase))
 
-	psqlString := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
-		cfg.PostServiceHost,
-		cfg.PostgresPort,
-		cfg.PostgresUser,
-		cfg.PostgresPassword,
-		cfg.PostgresDatabase)
+	// psqlString := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+	// 	cfg.PostServiceHost,
+	// 	cfg.PostgresPort,
+	// 	cfg.PostgresUser,
+	// 	cfg.PostgresPassword,
+	// 	cfg.PostgresDatabase)
 
-	a, err := gormadapter.NewAdapter("postgres", psqlString, true)
-	if err != nil {
-		log.Error("new adapter error: ", logger.Error(err))
-		return
-	}
+	// a, err := gormadapter.NewAdapter("postgres", psqlString, true)
+	// if err != nil {
+	// 	log.Error("new adapter error: ", logger.Error(err))
+	// 	return
+	// }
 
-	casbinEnForcer, err := casbin.NewEnforcer(cfg.CasbinConfigPath, a)
+	casbinEnForcer, err := casbin.NewEnforcer(cfg.CasbinConfigPath, cfg.CasbinPolicyPath)
 	if err != nil {
 		log.Error("new enforcer error", logger.Error(err))
 		return
